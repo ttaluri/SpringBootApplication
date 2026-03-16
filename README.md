@@ -14,14 +14,10 @@ The application allows users to create, retrieve, update, and delete items throu
 ### Project Structure:
 #### API Endpoints
 #### 1. Get Item by ID: 
-
-Endpoint: GET/items/{id}
-
-Description: Retrieves a specific item by its ID.
-
-Example Request: GET/items/1
-
-Response Example: 
+- Endpoint: GET/items/{id}
+- Description: Retrieves a specific item by its ID.
+- Example Request: GET/items/1
+- Response Example: 
 {
   "id": 1,
   "name": "Laptop",
@@ -29,11 +25,9 @@ Response Example:
 }
 
 #### 2. Get All Items: Endpoint: GET/items
-
-Description: Retrieves a list of all items.
-
-Response Example:
-[
+- Description: Retrieves a list of all items.
+- Response Example:
+- [
   {
     "id": 1,
     "name": "Laptop",
@@ -47,18 +41,14 @@ Response Example:
 ]
 
 #### 3. Create Item: 
-
-Endpoint: POST/items
-
-Description: Creates a new item.
-
-Request Body: 
+- Endpoint: POST/items
+- Description: Creates a new item.
+- Request Body: 
 {
   "name": "Tablet",
   "price": 500
 }
-
-Response Example:
+- Response Example:
 {
   "id": 3,
   "name": "Tablet",
@@ -66,41 +56,45 @@ Response Example:
 }
 
 #### 4. Update Item:
-
-Endpoint: PUT/items/{id}
-
-Description: Updates an existing item.
-
-Request Example: 
+- Endpoint: PUT/items/{id}
+- Description: Updates an existing item.
+- Request Example: 
 {
   "name": "Gaming Laptop",
   "price": 1500
 }
 
 #### 5. Delete Item:
-
-Endpoint: DELETE/items/{id}
-
-Description: Deletes an item from the system.
-
+- Endpoint: DELETE/items/{id}
+- Description: Deletes an item from the system.
 
 ### Development Setup
-#### Prerequisites
-1. Install the following: Java (JDK 17 or later)
+#### Install Required Tools
+1. Java (JDK 17 or later)
 2. Apache Maven
-3. IntelliJ IDEA
-4. Git
-
+3. IntelliJ IDEA (or any Java IDE)
+4. MySQL
+5. Git
+   
 #### Installation Steps
 1. Clone the repository: git clone https://github.com/ttaluri/SpringBootApplication.git
-2. Navigate to the project
-3. cd SpringBootApplication
-4. Build the project
-5. mvn clean install
-6. Run the application
-7. mvn spring-boot:run
+2. Navigate to the project: cd SpringBootApplication
+3. Build the project and install dependencies using Maven: mvn clean install
+4. Configure the database (more details below)
+5. Run the application- mvn spring-boot:run - The application will start on: http://localhost:8080
+6. Verify the Application - Open a browser or use Postman to test the API. Example endpoint: http://localhost:8080/items
 
-#### The application will start on: http://localhost:8080
+#### Configuring the Database
+- Open the application.properties file located in: src/main/resources/application.properties
+- Configure your database settings. 
+
+#### Example:
+spring.datasource.url=jdbc:mysql://localhost:3306/itemsdb  
+spring.datasource.username=root  
+spring.datasource.password=yourpassword  
+spring.jpa.hibernate.ddl-auto=update
+
+Make sure the database is created before running the application.
 
 ### Testing the API
 You can test the API using Postman
@@ -119,7 +113,7 @@ Example: http://localhost:8080/items
 4. DELETE → Delete an item
 
 #### For POST or PUT, add the request body in JSON format.
-Example request body:
+Example request body:  
 {
   "name": "Laptop",
   "price": 1200
