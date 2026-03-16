@@ -1,7 +1,6 @@
 package com.assignemnt.ttaluri.controller;
 
 import com.assignemnt.ttaluri.model.Item;
-import com.assignemnt.ttaluri.repository.ItemRepository;
 import com.assignemnt.ttaluri.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,13 +28,13 @@ public class ItemController {
 
     //UPDATE
     @PutMapping("/{id}/quantity")
-    public Item updateQuantity(@PathVariable Integer id, @RequestParam int quantity){
+    public Item updateQuantity(@PathVariable Integer id, @RequestParam Integer quantity){
         return itemService.updateQuantity(id, quantity);
     }
 
     //DELETE
     @DeleteMapping("/{id}")
-    public void deleteItem(@PathVariable int id){
+    public void deleteItem(@PathVariable Integer id){
         itemService.deleteItem(id);
     }
 

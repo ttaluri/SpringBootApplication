@@ -1,7 +1,6 @@
 package com.assignemnt.ttaluri.test;
 
 import com.assignemnt.ttaluri.model.Item;
-import com.assignemnt.ttaluri.repository.ItemRepository;
 import com.assignemnt.ttaluri.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
